@@ -3,6 +3,7 @@ require_once 'config.php';
 
 class SocketByte {
 	private $socket;
+	private $earea = 0;
 	
 	public function connect($server, $port) 
 	{
@@ -40,6 +41,7 @@ class SocketByte {
 		{
 			//echo "{$Row['ip']}:{$Row['port']}<br/>";
 			//return false;
+			$this->earea = $Row['area'];
 			return $this->connect($Row['ip'], $Row['port']);
 		}
 		return false;
@@ -115,7 +117,7 @@ class SocketByte {
 	
 	public function SetActor()
 	{
-		$this->head[$this->EPH_ACTOR_TYPEAREA] = -65516;
+		$this->head[$this->EPH_ACTOR_TYPEAREA] =  $this->earea<<16 | 22;
 		$this->head[$this->EPH_ACTOR_ID] = -1;
 	}
 	
