@@ -15,10 +15,12 @@
 	operator	制定操作类型（自定义字符串）
 	data        可选数据	
  */
- 
+
+  
  $arr = array(
 	'actor_name' => 'ACTOR_GM',
 	'operator' => 'all_protocol',
+	'data' => $_POST['type']
  );
  $json = json_encode($arr); 
  $so->send($json);
