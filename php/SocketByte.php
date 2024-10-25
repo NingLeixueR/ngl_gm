@@ -197,9 +197,12 @@ class SocketByte {
 		//echo "<br/>$rst<br/>";
 		$rst = substr($rst, 2);
 		//echo "<br/>收到的json<br/>$rst<br/>";
-		if($isjson)
+		//if($isjson)
 			header('Content-Type: application/json');
+		//echo htmlspecialchars($rst);
 		echo "$rst";
+		//echo json_encode(htmlspecialchars($rst));
+		
 		return json_decode($rst, true);
 	}
 	
