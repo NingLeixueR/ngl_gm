@@ -25,7 +25,6 @@
  $json = json_encode($arr); 
  $so->send($json);
  $response = $so->wait_response(false);
- echo "<hr/>".$response['data']."<hr/>";
  
 
 ?>

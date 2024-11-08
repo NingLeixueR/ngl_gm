@@ -18,7 +18,7 @@
  
  $arr = array(
 	'actor_id' => $_POST['roleid'],
-	'operator' => 'notalk',
+	'operator' => 'bantalk',
 	'data' => $_POST['duration']
  );
  
