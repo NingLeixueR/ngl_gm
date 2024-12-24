@@ -19,7 +19,11 @@
  $arr = array(
 	'actor_name' => 'ACTOR_FAMILY',
 	'operator' => 'ranklist',
-	'data' => $_POST['type']
+	'data' => array(
+		'type'=>$_POST['type'],
+		'page'=>$_POST['page'],
+		'everynum'=>$_POST['everynum'],
+	)
  );
  $json = json_encode($arr); 
  $so->send($json);
