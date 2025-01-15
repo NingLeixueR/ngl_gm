@@ -17,7 +17,7 @@
  */
  
  $arr = array(
-	'actor_name' => 'ACTOR_FAMILY',
+	'actor_name' => 'ACTOR_RANKLIST',
 	'operator' => 'ranklist',
 	'data' => array(
 		'type'=>$_POST['type'],
