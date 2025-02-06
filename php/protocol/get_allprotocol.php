@@ -20,11 +20,18 @@
  $arr = array(
 	'actor_name' => 'ACTOR_GM',
 	'operator' => 'all_protocol',
-	'data' => $_POST['type']
+	'data' => array(
+		'servertype' => $_POST['servertype'],
+	)
  );
  $json = json_encode($arr); 
  $so->send($json);
- $response = $so->wait_response();
+
+ $count = count($_POST['servertype']);
+ while(--$count >= 0)
+ {
+	$response = $so->wait_response();	 
+ }
  
 
 ?>
