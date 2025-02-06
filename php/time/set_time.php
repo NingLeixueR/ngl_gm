@@ -21,21 +21,26 @@
 	actor_name  指定actor的类型  单例必须
 	actor_id	操作制定actor    非单例必须
 	operator	制定操作类型（自定义字符串）
-	data        可选数据	
+	data        可选数据
  */
  
  
  $arr = array(
-	'actor_name' => 'ACTOR_NOTICE',
+	'actor_name' => 'ACTOR_GM',
 	'operator' => 'set_time',
 	'data' => array(
-		'distributeall' => true,
+		'servertype' => $_POST['servertype'],
 		'time' => $totime
 	)
  );
  
  $json = json_encode($arr); 
  $so->send($json);
- $response = $so->wait_response(); 
+ 
+ $count = count($_POST['servertype']);
+ while(--$count >= 0)
+ {
+	$response = $so->wait_response();	 
+ }
 
 ?>
