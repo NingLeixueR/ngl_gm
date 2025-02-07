@@ -19,7 +19,11 @@
  $arr = array(
 	'actor_id' => $_POST['roleid'],
 	'operator' => 'gmrechange',
-	'data' => $_POST['rechangeid']
+	'data' => array(
+		'rechangeid' => $_POST['rechangeid'],
+		'area' => $_POST['area'],
+		'dataid' => $_POST['dataid'],
+	)	
  );
  
  $json = json_encode($arr); 
