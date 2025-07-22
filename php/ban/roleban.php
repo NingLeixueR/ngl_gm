@@ -20,8 +20,8 @@
 	'actor_name' => 'actor_manage_role',
 	'operator' => 'roleban',
 	'data' => array(
-		'roleid' => $_POST['roleid'],
-		'stat' => $_POST['stat'],
+		'm_roleid' => $_POST['m_roleid'],
+		'm_stat' => $_POST['m_stat'],
 	)
  );
  

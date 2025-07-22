@@ -21,8 +21,8 @@
 	'operator' => 'queryall',
 	'db' => intval($_POST['db']),
 	'data' => array(
-		'everypagecount' => intval($_POST['everypagecount']),
-		'page' => intval($_POST['page']),
+		'm_everypagecount' => intval($_POST['m_everypagecount']),
+		'm_page' => intval($_POST['m_page']),
 	)
  );
  $json = json_encode($arr); 

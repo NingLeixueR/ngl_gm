@@ -32,7 +32,7 @@
 			<option value="9">活动数据</option>
 			<option value="10">任务数据</option>
 		</select><br/>
-		id:<input name="id" type="text"/><br/>
+		id:<input name="m_id" type="text"/><br/>
 		<input type="submit" value="查询"/><br/>
 	</form>
 </body>

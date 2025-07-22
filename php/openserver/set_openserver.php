@@ -17,14 +17,9 @@
  */
  
  $arr = array(
-	'actor_name' => 'ACTOR_NOTICE',
-	'operator' => 'add_notice',
-	'data' => array(
-		'id' => '-1',
-		'm_notice' => $_POST['m_notice'],
-		'm_starttime' => intval($_POST['m_starttime']),
-		'm_finishtime' => intval($_POST['m_finishtime']),
-	)
+	'm_actor_name' => 'actor_keyvalue',
+	'operator' => 'set_openserver',
+	'm_data' => $_POST['m_time'],
  );
  
  $json = json_encode($arr); 

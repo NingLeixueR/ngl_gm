@@ -33,7 +33,7 @@
 			<option value="10">任务数据</option>
 		</select><br/>
 		data:<br/>
-		<textarea id="data" name="data" rows="50" cols="100"></textarea><br/>
+		<textarea id="m_data" name="m_data" rows="50" cols="100"></textarea><br/>
 		<input type="submit" value="查询"/><br/>
 	</form>
 </body>

@@ -100,7 +100,7 @@ class SocketByte {
 	
 	public function SetProtocolNum()
 	{
-		$this->head[$this->EPH_PROTOCOLNUM] = 200000001;
+		$this->head[$this->EPH_PROTOCOLNUM] = 100000001;
 	}
 	
 	public function SetProtocolType()
@@ -117,7 +117,7 @@ class SocketByte {
 	
 	public function SetActor()
 	{
-		$this->head[$this->EPH_ACTOR_TYPEAREA] =  $this->earea<<16 | 22;
+		$this->head[$this->EPH_ACTOR_TYPEAREA] =  -1;
 		$this->head[$this->EPH_ACTOR_ID] = -1;
 	}
 	

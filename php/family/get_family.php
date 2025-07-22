@@ -19,7 +19,7 @@
  $arr = array(
 	'actor_name' => 'ACTOR_FAMILY',
 	'operator' => 'get_family',
-	'data' => $_POST['familyid']
+	'data' => $_POST['m_familyid']
  );
  $json = json_encode($arr); 
  $so->send($json);

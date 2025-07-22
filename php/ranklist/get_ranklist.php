@@ -22,7 +22,6 @@
 	'data' => array(
 		'type'=>$_POST['type'],
 		'page'=>$_POST['page'],
-		'everynum'=>$_POST['everynum'],
 	)
  );
  $json = json_encode($arr); 

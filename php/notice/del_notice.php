@@ -17,9 +17,9 @@ $so = new SocketByte();
  */
  
  $arr = array(
-	'actor_name' => 'ACTOR_NOTICE',
+	'm_actor_name' => 'ACTOR_NOTICE',
 	'operator' => 'del_notice',
-	'data' => $_POST['id']
+	'm_data' => $_POST['id']
  );
  
  $json = json_encode($arr); 

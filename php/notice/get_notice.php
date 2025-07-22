@@ -17,9 +17,9 @@
  */
  
  $arr = array(
-	'actor_name' => 'ACTOR_NOTICE',
+	'm_actor_name' => 'ACTOR_NOTICE',
 	'operator' => 'get_notice',
-	'data' => ''
+	'm_data' => ''
  );
  $json = json_encode($arr); 
  $so->send($json);

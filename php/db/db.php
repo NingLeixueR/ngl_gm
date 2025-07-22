@@ -20,7 +20,7 @@
 	'actor_name' => 'ACTOR_DB',
 	'operator' => 'query',
 	'db' => intval($_POST['db']),
-	'data' => "{$_POST['id']}",
+	'data' => "{$_POST['m_id']}",
  );
  $json = json_encode($arr); 
  $so->send($json);

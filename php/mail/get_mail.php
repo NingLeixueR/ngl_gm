@@ -19,7 +19,7 @@
  $arr = array(
 	'actor_name' => 'ACTOR_MAIL',
 	'operator' => 'get_mails',
-	'data' => $_POST['roleid']
+	'data' => $_POST['m_roleid']
  );
  $json = json_encode($arr); 
  $so->send($json);

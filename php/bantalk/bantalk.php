@@ -17,9 +17,9 @@
  */
  
  $arr = array(
-	'actor_id' => $_POST['roleid'],
+	'actor_id' => $_POST['m_roleid'],
 	'operator' => 'bantalk',
-	'data' => $_POST['duration']
+	'data' => $_POST['m_duration']
  );
  
  $json = json_encode($arr); 

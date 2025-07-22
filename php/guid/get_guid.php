@@ -20,10 +20,9 @@
 	'actor_name' => 'ACTOR_GM',
 	'operator' => 'guid',
 	'data' => array(
-		'servertype' => array(7),
-		'actor_name' => $_POST['actor_name'],
-		'area' => $_POST['area'],
-		'dataid' => $_POST['dataid'],
+		'm_actor_name' => $_POST['m_actor_name'],
+		'm_area' => $_POST['m_area'],
+		'm_dataid' => $_POST['m_dataid'],
 	)
  );
  

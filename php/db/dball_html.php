@@ -32,8 +32,8 @@
 			<option value="9">活动数据</option>
 			<option value="10">任务数据</option>
 		</select><br/>
-		everypagecount:<input name="everypagecount" type="text"/><br/>
-		page:<input name="page" type="text"/><br/>
+		everypagecount:<input name="m_everypagecount" type="text"/><br/>
+		page:<input name="m_page" type="text"/><br/>
 		<input type="submit" value="查询"/><br/>
 	</form>
 </body>

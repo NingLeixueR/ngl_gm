@@ -1,14 +1,14 @@
 <?php
  include '../SocketByte.php';
  
- $array = explode("\r\n",$_POST['items']);
+ $array = explode("\r\n",$_POST['m_items']);
  $arrayitem = array();
  foreach($array as $id => $item)
  {
 	 $items = explode("*", $item);
 	 $arrayitem[] = array(
-		"itemtid"=>$items[0],
-		"itemtcount"=>$items[1],
+		"m_itemtid"=>$items[0],
+		"m_itemtcount"=>$items[1],
 	 );
  }
  
@@ -31,9 +31,9 @@
 	'actor_name' => 'ACTOR_MAIL',
 	'operator' => 'add_mail',
 	'data' => array(
-		'roleid' => $_POST['roleid'],
-		'content' => $_POST['content'],
-		'items' => $arrayitem,
+		'm_roleid' => $_POST['m_roleid'],
+		'm_content' => $_POST['m_content'],
+		'm_items' => $arrayitem,
 	)
  );
  

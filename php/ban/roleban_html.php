@@ -2,8 +2,8 @@
 	<h2>·âºÅ</h2>
 	<form action="./roleban.php" method="post" accept-charset="UTF-8">
 		<?php require_once "../serverls.php";?>
-		Íæ¼Òid:<input name="roleid" type="text"/><br/>
-		<select name="stat">
+		Íæ¼Òid:<input name="m_roleid" type="text"/><br/>
+		<select name="m_stat">
 		<option value=0>½â·â</option>
 		<option value=1>·âºÅ</option>
 		</select>

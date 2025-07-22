@@ -20,8 +20,8 @@ $so = new SocketByte();
 	'actor_name' => 'ACTOR_MAIL',
 	'operator' => 'del_mail',
 	'data' => array(
-		"roleid" =>$_POST['roleid'],
-		"mailid" =>$_POST['mailid']
+		"m_roleid" =>$_POST['m_roleid'],
+		"m_mailid" =>$_POST['m_mailid']
 	)
  );
  

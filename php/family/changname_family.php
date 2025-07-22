@@ -20,8 +20,8 @@ $so = new SocketByte();
 	'actor_name' => 'ACTOR_FAMILY',
 	'operator' => 'change_familyname',
 	'data' => array(
-		"familyid" =>$_POST['familyid'],
-		"familyname" =>$_POST['familyname']
+		"m_familyid" =>$_POST['m_familyid'],
+		"m_familyname" =>$_POST['m_familyname']
 	)
  );
  
