@@ -26,5 +26,6 @@
  $so->send($json);
  $response = $so->wait_response(false);
  
+ echo "<br/>".$response["data"];
 
 ?>
