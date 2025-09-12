@@ -151,7 +151,7 @@ class SocketByte {
 		socket_write($this->socket, $sbuff, 4*$this->EPH_SUM+4+strlen($this->datajson));		
 	}
 	
-	public function wait_response($isjson = true) 
+	public function wait_response($isprint = true) 
 	{
 		$rst = socket_read($this->socket, 4*$this->EPH_SUM);
 		if (!$rst) 
@@ -176,12 +176,17 @@ class SocketByte {
 		//echo "BYTES:".$recvhead[$this->EPH_BYTES]."<br/>";
 		$rst = socket_read($this->socket, $recvhead[$this->EPH_BYTES]);
 		//echo "<br/>$rst<br/>";
-		//$rst = substr($rst, 4);
+		$rst = substr($rst, 4);
 		//echo "<br/>收到的json<br/>$rst<br/>";
 		//if($isjson)
-			header('Content-Type: application/json');
+			
 		//echo htmlspecialchars($rst);
-		echo "$rst";
+		if($isprint)
+		{
+			header('Content-Type: application/json');
+			echo "$rst";
+		}
+			
 		//echo json_encode(htmlspecialchars($rst));
 		
 		return json_decode($rst, true);
