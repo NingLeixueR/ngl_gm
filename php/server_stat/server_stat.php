@@ -27,7 +27,7 @@
  $json = json_encode($arr); 
  $so->send($json);
  $response = $so->wait_response();
- $count = count($_POST['servertype']);
+ $count = count($_POST['servertype'])-1;
  while(--$count >= 0)
  {
 	$response = $so->wait_response();	 

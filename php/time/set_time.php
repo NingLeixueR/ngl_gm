@@ -1,6 +1,8 @@
 <?php
  include '../SocketByte.php';
  
+ date_default_timezone_set('Asia/Shanghai');
+ 
  $so = new SocketByte();
  if($so->connectServer($_POST['server']) == false)
  {
@@ -14,8 +16,10 @@
  $hour = $_POST['hour'];
  $min = $_POST['min'];
  $sec = $_POST['sec'];
+ echo "{$year}-{$mon}-{$day} {$hour}:{$min}:{$sec}<br/>";
  $totime = mktime($hour, $min, $sec, $mon, $day, $year);
- 
+ echo "utc:{$totime}<br/>";
+
  /*
 	需要发送给服务器的字段包括
 	actor_name  指定actor的类型  单例必须
@@ -30,7 +34,7 @@
 	'operator' => 'set_time',
 	'data' => array(
 		'servertype' => $_POST['servertype'],
-		'time' => $totime
+		'time' => "{$totime}"
 	)
  );
  

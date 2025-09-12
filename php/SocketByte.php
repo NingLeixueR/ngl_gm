@@ -74,12 +74,11 @@ class SocketByte {
 	private $EPH_BYTES 			= 2;
 	private $EPH_TIME 			= 3;
 	private $EPH_PROTOCOLNUM 	= 4;
-	private $EPH_PROTOCOLTYPE 	= 5;
-	private $EPH_ACTOR_TYPEAREA = 6;
-	private $EPH_ACTOR_ID 		= 7;
-	private $EPH_REQUEST_ACTOR_TYPEAREA = 8;
-	private $EPH_REQUEST_ACTOR_ID = 9;
-	private $EPH_SUM 			= 10;
+	private $EPH_ACTOR_TYPEAREA = 5;
+	private $EPH_ACTOR_ID 		= 6;
+	private $EPH_REQUEST_ACTOR_TYPEAREA = 7;
+	private $EPH_REQUEST_ACTOR_ID = 8;
+	private $EPH_SUM 			= 9;
 	
 	private $head = array();
 	private $recvhead= array();
@@ -103,18 +102,6 @@ class SocketByte {
 		$this->head[$this->EPH_PROTOCOLNUM] = 100000001;
 	}
 	
-	public function SetProtocolType()
-	{
-//enum EPROTOCOL_TYPE
-//{
-//	EPROTOCOL_TYPE_CUSTOM,			// 自定义二进制协议
-//	EPROTOCOL_TYPE_PROTOCOLBUFF,	// protobuff协议
-//	EPROTOCOL_TYPE_COUNT,
-//	EPROTOCOL_TYPE_ERROR,
-//};
-		$this->head[$this->EPH_PROTOCOLTYPE] = 0;
-	}
-	
 	public function SetActor()
 	{
 		$this->head[$this->EPH_ACTOR_TYPEAREA] =  -1;
@@ -130,15 +117,8 @@ class SocketByte {
 	
 	public function SetBytes()
 	{
-		//echo "Byte:".(2+strlen($this->datajson))."<br/>";
-		$this->head[$this->EPH_BYTES] = 2+strlen($this->datajson);
-	}
-	
-	function intToUint16($value) 
-	{
-		// 确保$value是int类型
-		$value = intval($value);
-		return $value & 0xFFFF; // 使用位运算，保留最低的16位
+		//echo "Byte:".(4+strlen($this->datajson))."<br/>";
+		$this->head[$this->EPH_BYTES] = 4+strlen($this->datajson);
 	}
 	
 	public function send($jsonstr)
@@ -148,7 +128,6 @@ class SocketByte {
 		$this->SetMask();
 		$this->SetTime();
 		$this->SetProtocolNum();
-		$this->SetProtocolType();
 		$this->SetActor();
 		$this->SetRequestActor();
 		$this->SetBytes();
@@ -164,12 +143,12 @@ class SocketByte {
 		//echo "<br/>";
 		
 		
-		$sbuff .= pack("S", $this->intToUint16(strlen($this->datajson)));
+		$sbuff .= pack("V", strlen($this->datajson));
 		$sbuff .= $this->datajson;
 		
 		//echo "sbuff = [{$sbuff}]<br/>";
 		
-		socket_write($this->socket, $sbuff, 4*$this->EPH_SUM+2+strlen($this->datajson));		
+		socket_write($this->socket, $sbuff, 4*$this->EPH_SUM+4+strlen($this->datajson));		
 	}
 	
 	public function wait_response($isjson = true) 
@@ -193,9 +172,11 @@ class SocketByte {
 		}
 		
 		//print_r($recvhead);
+		//echo "<br/>";
+		//echo "BYTES:".$recvhead[$this->EPH_BYTES]."<br/>";
 		$rst = socket_read($this->socket, $recvhead[$this->EPH_BYTES]);
 		//echo "<br/>$rst<br/>";
-		$rst = substr($rst, 2);
+		//$rst = substr($rst, 4);
 		//echo "<br/>收到的json<br/>$rst<br/>";
 		//if($isjson)
 			header('Content-Type: application/json');
