@@ -17,7 +17,7 @@
  */
  
  $arr = array(
-	'actor_name' => 'actor_manage_role',
+	'actor_name' => 'actor_role_manage',
 	'operator' => 'get_roleban',
  );
  

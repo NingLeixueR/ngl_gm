@@ -17,7 +17,7 @@
  */
  
  $arr = array(
-	'actor_name' => 'actor_manage_role',
+	'actor_name' => 'actor_role_manage',
 	'operator' => 'roleban',
 	'data' => array(
 		'm_roleid' => $_POST['m_roleid'],
